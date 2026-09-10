@@ -20,8 +20,8 @@ export default async function ({
   if (!student) {
     return (
       <div className="min-h-screen bg-gray-100 flex justify-center items-center p-5">
-        <div className="bg-white p-8 rounded-xl shadow-md border text-center">
-          <h2 className="text-2xl font-bold text-gray-700 mb-2">
+        <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-300 text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
             Student Not Found
           </h2>
 
@@ -37,11 +37,17 @@ export default async function ({
   return (
     <div className="min-h-screen bg-gray-100 p-5">
       <div className="max-w-md mx-auto">
-        <h1 className="text-2xl font-bold text-gray-800 mb-5">
-          Student Details
-        </h1>
+        <div className="bg-white rounded-xl shadow-lg border border-gray-300 p-5 mb-5">
+          <h1 className="text-2xl font-bold text-gray-800">Student Details</h1>
 
-        <ShowStudents student={student} />
+          <p className="text-gray-500 text-sm mt-1">
+            Information about the selected student
+          </p>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-lg border border-gray-300 p-5">
+          <ShowStudents student={student} />
+        </div>
       </div>
     </div>
   );
