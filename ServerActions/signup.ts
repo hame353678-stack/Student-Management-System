@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 export default async function signup(formdata: FormData) {
   const id = formdata.get("id") as string;
-  const username = formdata.get("username") as string;
+  const username = formdata.get("name") as string;
   const regId = formdata.get("regId") as string;
   const department = formdata.get("department") as string;
   const semester = formdata.get("semester") as string;
