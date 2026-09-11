@@ -40,9 +40,7 @@ export default async function ({
         <div className="bg-white rounded-xl shadow-lg border border-gray-300 p-5 mb-5">
           <h1 className="text-2xl font-bold text-gray-800">Student Details</h1>
 
-          <p className="text-gray-500 text-sm mt-1">
-            Information about the selected student
-          </p>
+          <p className="text-gray-500 text-sm mt-1">you are loged in</p>
         </div>
 
         <div className="bg-white rounded-xl shadow-lg border border-gray-300 p-5">
