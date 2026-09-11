@@ -1,5 +1,5 @@
 import { type studentType } from "@/DataTypes/studentType";
-
+import Link from "next/link";
 export default function ShowStudents({ student }: { student: studentType }) {
   return (
     <div className="lg:h-60 lg:w-60 sm:h-30 sm:w-30 bg-white p-4 border rounded-xl shadow-md hover:shadow-lg">
@@ -26,6 +26,11 @@ export default function ShowStudents({ student }: { student: studentType }) {
       <p className="font-semibold text-gray-700">
         Location : <span className="font-normal">{student.Location}</span>
       </p>
+      <Link
+        href={`/ServerActions/DeleteStudent?regId=${student.regId}&name=${student.name}`}
+      >
+        Delete student
+      </Link>
     </div>
   );
 }
