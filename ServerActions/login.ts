@@ -16,7 +16,7 @@ export default async function Login(formdata: FormData) {
   });
   const id = student?.id;
   if (!student) {
-    console.log(`Invalid username or password : `);
+    redirect(`/Account/SignUp`);
   } else {
     redirect(`/Students/${id}`);
   }
