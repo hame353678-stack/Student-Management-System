@@ -8,7 +8,7 @@ export default function SignUp() {
         action={signup}
         className="w-full max-w-2xl rounded-2xl bg-white p-6 shadow-xl border border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5"
       >
-        {/* Header - Spans across both columns */}
+       
         <div className="sm:col-span-2 text-center sm:text-left mb-2">
           <h2 className="text-2xl font-bold text-slate-800">
             Create an Account
@@ -18,7 +18,7 @@ export default function SignUp() {
           </p>
         </div>
 
-        {/* Input Fields */}
+        
         <div className="flex flex-col gap-1.5">
           <label className="text-xs font-semibold text-slate-600 px-1">
             User ID
@@ -110,7 +110,7 @@ export default function SignUp() {
           />
         </div>
 
-        {/* Submit Button - Spans across both columns */}
+  
         <button
           className="w-full h-11 mt-2 sm:col-span-2 font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.99]"
           type="submit"
