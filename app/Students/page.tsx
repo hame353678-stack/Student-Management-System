@@ -9,7 +9,7 @@ export default async function Students() {
     const students: studentType[] | null = await management.find({}).toArray();
 
     return (
-      <div className="grid grid-cols-3 bg-fuchsia-300 gap-3 p-4 ">
+      <div className="grid grid-cols-3 bg-fuchsia-300 sm:gap-1 md:pag-2 lg:gap-3 sm:2 md:3 lg:p-4 ">
         {students.map((student, idx) => (
           <ShowStudents student={student} key={idx} />
         ))}
