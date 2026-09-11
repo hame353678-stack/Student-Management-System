@@ -6,8 +6,8 @@ export default function ShowAssignments({
   Assignment: AssignmentTypes;
 }) {
   return (
-    <div className="border border-slate-200 rounded-xl p-5 max-w-sm mx-auto my-3 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200">
-      <p className="text-xs font-bold text-indigo-600 uppercase tracking-wider">
+    <div className="border border-slate-200 rounded-xl p-5 max-w-sm mx-auto my-3 bg-green-300 hover:shadow-md hover:border-slate-300 transition-all duration-200">
+      <p className="text-xs font-bold text-shadow-blue-500 uppercase tracking-wider">
         {Assignment.courseName}
       </p>
 
