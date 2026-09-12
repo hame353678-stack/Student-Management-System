@@ -33,7 +33,7 @@ export default function Nav() {
           </Link>
 
           <Link
-            href="/Quize"
+            href="/Quizes"
             className="rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-purple-700 sm:px-4"
           >
             Quizzes
