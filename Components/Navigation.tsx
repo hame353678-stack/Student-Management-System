@@ -40,7 +40,7 @@ export default function Nav() {
           </Link>
 
           <Link
-            href="/LogOut"
+            href="/Account/LogOut"
             className="rounded-lg bg-red-500 px-3 py-2 text-sm font-medium text-white hover:bg-red-600 sm:px-4"
           >
             LogOut
