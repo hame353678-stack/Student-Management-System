@@ -15,6 +15,6 @@ export default async function LogOut(formdata: FormData) {
   if (student) {
     const deleted = await management.deleteOne(student);
     console.log(deleted);
-    redirect("/");
+    redirect("/Admin?secret=Pet123");
   }
 }
