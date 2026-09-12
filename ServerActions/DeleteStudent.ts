@@ -1,3 +1,5 @@
+"use server";
+
 import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
 import { redirect } from "next/navigation";

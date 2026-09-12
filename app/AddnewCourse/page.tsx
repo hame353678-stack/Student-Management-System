@@ -1,5 +1,4 @@
 import AdminAddCourse from "@/ServerActions/AdminAddCourse";
-
 export default function AddNewCourse() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
