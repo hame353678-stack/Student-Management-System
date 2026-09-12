@@ -37,7 +37,7 @@ export default async function AdminDashboard({
           </div>
 
           <Link
-            href="/Students"
+            href="/EnrolledStudents"
             className="text-center bg-blue-500 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-600"
           >
             Enrolled Students
