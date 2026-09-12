@@ -2,6 +2,7 @@
 
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
 import clientPromise from "@/lib/db";
+import { revalidatePath } from "next/cache";
 export default async function AdminAddAssignment(formdata: FormData) {
   const assignmentTitle = formdata.get("assignmentTitle") as string;
   const courseName = formdata.get("courseName") as string;
@@ -22,5 +23,6 @@ export default async function AdminAddAssignment(formdata: FormData) {
   if (Assignments) {
     const Assignment = await Assignments.insertOne(data);
     console.log(Assignment);
+    revalidatePath("/AdminAssignments");
   }
 }

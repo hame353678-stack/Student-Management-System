@@ -2,6 +2,7 @@
 
 import { courseType } from "@/DataTypes/courseType";
 import clientPromise from "@/lib/db";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function AdminAddCourse(formdata: FormData) {
@@ -27,7 +28,7 @@ export default async function AdminAddCourse(formdata: FormData) {
   const course = await management.insertOne(data);
   if (course) {
     console.log(course);
-    redirect("/AdminCourses");
+    revalidatePath("/AdminCourses");
   } else {
     redirect("/Home");
   }

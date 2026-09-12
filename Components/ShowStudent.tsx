@@ -42,7 +42,6 @@ export default function ShowStudents({ student }: { student: studentType }) {
         </p>
       </div>
 
-      {/* Delete Student */}
       <form action={DeleteStudent} className="mt-5">
         <input type="hidden" name="regId" value={student.regId} />
 

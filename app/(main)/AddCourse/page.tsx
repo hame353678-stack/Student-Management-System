@@ -1,6 +1,6 @@
 import Addcourse from "@/ServerActions/Addcourse";
 
-export default async function ({
+export default async function AddCourse({
   searchParams,
 }: {
   searchParams: Promise<{

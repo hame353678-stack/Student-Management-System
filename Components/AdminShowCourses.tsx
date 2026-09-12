@@ -38,12 +38,6 @@ export default function AdminShowCourses({ course }: { course: courseType }) {
         </form>
 
         {/* Add New Course */}
-        <Link
-          href="/AddnewCourse"
-          className="flex-1 text-center bg-blue-500 text-white py-2 px-3 rounded-lg font-semibold text-sm hover:bg-blue-600"
-        >
-          Add New Course
-        </Link>
       </div>
     </div>
   );

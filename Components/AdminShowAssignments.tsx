@@ -13,7 +13,7 @@ export default function AddminShowAssignments({
         {Assignment.courseName}
       </p>
 
-      <h3 className="text-lg sm:text-xl font-bold text-slate-800 break-words">
+      <h3 className="text-lg sm:text-xl font-bold text-slate-800 break-word">
         {Assignment.assignmentTitle}
       </h3>
 
@@ -51,13 +51,6 @@ export default function AddminShowAssignments({
             Delete Assignment
           </button>
         </form>
-
-        <Link
-          href="/AddnewAssignment"
-          className="w-full sm:flex-1 text-center bg-blue-500 text-white py-2.5 px-3 rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors"
-        >
-          Add New Assignment
-        </Link>
       </div>
     </div>
   );
