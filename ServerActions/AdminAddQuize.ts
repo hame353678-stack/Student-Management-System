@@ -3,6 +3,7 @@
 import { QuizeType } from "@/DataTypes/QuizesType";
 import clientPromise from "@/lib/db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default async function AddnewQuize(formdata: FormData) {
   const QuizeTitle = formdata.get("QuizeTitle") as string;
@@ -21,6 +22,9 @@ export default async function AddnewQuize(formdata: FormData) {
   const management = database.collection<QuizeType>("Quizes");
   const Quize = await management.insertOne(data);
   if (Quize) {
+    revalidatePath("/Quizes");
+    revalidatePath("/AdminQuizes");
     revalidatePath("/Admin");
+    redirect("/Admin");
   }
 }
