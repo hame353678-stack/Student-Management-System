@@ -5,7 +5,7 @@ export default async function Students() {
   try {
     const client = await clientPromise;
     const database = client.db("StudentManagement");
-    const management = database.collection<studentType>("Students");
+    const management = database.collection<studentType>("Enrolements");
     const students: studentType[] | null = await management.find({}).toArray();
 
     return (

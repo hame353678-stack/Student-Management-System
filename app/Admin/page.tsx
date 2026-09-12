@@ -40,11 +40,10 @@ export default async function AdminDashboard({
             href="/Students"
             className="text-center bg-blue-500 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-600"
           >
-            Students
+            Enrolled Students
           </Link>
         </div>
 
-        {/* Management Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <Link
             href="/AdminCourses"

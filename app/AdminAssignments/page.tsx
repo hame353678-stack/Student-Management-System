@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/db";
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
 import AddminShowAssignments from "@/Components/AdminShowAssignments";
-
+import Link from "next/link";
 export default async function Assignements() {
   const client = await clientPromise;
   const database = client.db("StudentManagement");
@@ -16,6 +16,12 @@ export default async function Assignements() {
         Assigments
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <Link
+          href="/AddnewAssignment"
+          className="w-full sm:flex-1 text-center bg-blue-500 text-white py-2.5 px-3 rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors"
+        >
+          Add New Assignment
+        </Link>
         {Assignments.map((Assignment, idx) => (
           <AddminShowAssignments Assignment={Assignment} key={idx} />
         ))}
