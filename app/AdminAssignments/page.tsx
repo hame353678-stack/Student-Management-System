@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/db";
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
-import ShowAssignments from "@/Components/ShowAssignments";
+import AddminShowAssignments from "@/Components/AdminShowAssignments";
 
 export default async function Assignements() {
   const client = await clientPromise;
@@ -17,7 +17,7 @@ export default async function Assignements() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {Assignments.map((Assignment, idx) => (
-          <ShowAssignments Assignment={Assignment} key={idx} />
+          <AddminShowAssignments Assignment={Assignment} key={idx} />
         ))}
       </div>
     </div>
