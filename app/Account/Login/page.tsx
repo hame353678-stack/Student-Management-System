@@ -4,7 +4,7 @@ import Logincomponent from "@/ServerActions/login";
 
 export default function Login() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-100 px-4">
       <form
         action={Logincomponent}
         className="w-full max-w-sm min-h-100 flex flex-col gap-5 bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200"
