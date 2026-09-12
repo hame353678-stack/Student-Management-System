@@ -20,7 +20,6 @@ export default async function Login(formdata: FormData) {
     console.log(`Not found student with Id : {id}`);
     redirect(`/Account/SignUp`);
   } else {
-    const id = student.id;
     revalidatePath(`/Home`);
     redirect(`/Home`);
   }
