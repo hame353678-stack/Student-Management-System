@@ -2,6 +2,7 @@
 
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
 import clientPromise from "@/lib/db";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 export default async function DeleteAssignment(formdata: FormData) {
   const assignmentTitle = formdata.get("assignmentTitle") as string;
@@ -16,6 +17,6 @@ export default async function DeleteAssignment(formdata: FormData) {
   });
   if (Assignment) {
     await management.deleteOne(Assignment);
-    redirect("/Admin?secret=Pet123");
+    revalidatePath("/AdminAssignments");
   }
 }

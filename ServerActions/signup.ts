@@ -2,6 +2,7 @@
 
 import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function signup(formdata: FormData) {
@@ -27,5 +28,6 @@ export default async function signup(formdata: FormData) {
   };
   const result = await management.insertOne(student);
   console.log(result);
+  revalidatePath(`Students/${student.id}`);
   redirect(`/Students/${student.id}`);
 }
