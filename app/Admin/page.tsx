@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AddminCourses from "../AdminCourses/page";
 
 export default async function AdminDashboard({
   searchParams,
@@ -8,34 +7,91 @@ export default async function AdminDashboard({
 }) {
   const { secret } = await searchParams;
 
-  if (secret === "Pet123") {
+  if (secret !== "Pet123") {
     return (
-      <div className="p-6 max-w-4xl mx-auto">
-        <div className="flex justify-between items-center border-b pb-4 mb-6">
-          <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-          <Link
-            href={"/Students"}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600"
-          >
-            Students
-          </Link>
-        </div>
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
+        <div className="w-full max-w-md bg-white border border-gray-200 rounded-xl shadow-md p-6 text-center">
+          <h2 className="text-xl font-bold text-red-500">Invalid Page</h2>
 
-        <div className="bg-gray-50 p-4 rounded-xl border">
-          <AddminCourses />
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="flex h-screen items-center justify-center bg-gray-50">
-        <div className="text-center p-6 bg-white border rounded-xl shadow-sm">
-          <h2 className="text-xl font-bold text-red-500">Invalid page</h2>
-          <p className="text-gray-500 text-sm mt-1">
+          <p className="text-gray-500 text-sm mt-2">
             Please check your secret key.
           </p>
         </div>
       </div>
     );
   }
+
+  return (
+    <div className="min-h-screen bg-gray-100 p-5 sm:p-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-800">
+              Admin Dashboard
+            </h1>
+
+            <p className="text-sm text-gray-500 mt-1">
+              Manage students, courses, assignments and quizzes.
+            </p>
+          </div>
+
+          <Link
+            href="/Students"
+            className="text-center bg-blue-500 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-600"
+          >
+            Students
+          </Link>
+        </div>
+
+        {/* Management Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <Link
+            href="/AdminCourses"
+            className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md hover:border-blue-300 transition"
+          >
+            <h2 className="text-lg font-bold text-gray-800">Courses</h2>
+
+            <p className="text-sm text-gray-500 mt-2">
+              Add and manage courses.
+            </p>
+
+            <span className="inline-block mt-5 text-blue-500 font-medium">
+              Manage Courses →
+            </span>
+          </Link>
+
+          <Link
+            href="/AdminAssignments"
+            className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md hover:border-green-300 transition"
+          >
+            <h2 className="text-lg font-bold text-gray-800">Assignments</h2>
+
+            <p className="text-sm text-gray-500 mt-2">
+              Add and manage assignments.
+            </p>
+
+            <span className="inline-block mt-5 text-green-500 font-medium">
+              Manage Assignments →
+            </span>
+          </Link>
+
+          <Link
+            href="/AdminQuizes"
+            className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md hover:border-purple-300 transition"
+          >
+            <h2 className="text-lg font-bold text-gray-800">Quizzes</h2>
+
+            <p className="text-sm text-gray-500 mt-2">
+              Add and manage quizzes.
+            </p>
+
+            <span className="inline-block mt-5 text-purple-500 font-medium">
+              Manage Quizzes →
+            </span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
