@@ -4,12 +4,9 @@ import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
 import { redirect } from "next/navigation";
 
-export default async function DELETE({
-  searchParams,
-}: {
-  searchParams: Promise<{ regId: string[]; name: string[] }>;
-}) {
-  const { regId, name } = await searchParams;
+export default async function DeleteStudent(formdata: FormData) {
+  const regId = formdata.get("regId");
+  const name = formdata.get("name");
   const client = await clientPromise;
   const database = client.db("StudentManagement");
   const management = database.collection<studentType>("Students");
