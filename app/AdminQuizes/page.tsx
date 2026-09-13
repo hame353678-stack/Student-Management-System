@@ -18,15 +18,15 @@ export default async function AdminQuizes() {
   if (Quizzes) {
     return (
       <div className="p-4 max-w-7xl mx-auto">
+        <div className="text-xl font-bold text-center bg-cyan-100 text-gray-800 mb-4">
+          Quizes
+        </div>
         <Link
           href={`/AddNewQuize`}
           className="flex-1 text-center bg-blue-500 text-white py-2 px-3 rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors"
         >
           Add New Quiz
         </Link>
-        <div className="text-xl font-bold text-center bg-cyan-100 text-gray-800 mb-4">
-          Quizes
-        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {Quizzes.map((Quize, idx) => (
             <AdminShowQuizes Quize={Quize} key={idx} />

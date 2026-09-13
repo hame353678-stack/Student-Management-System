@@ -19,7 +19,7 @@ export default function AdminShowQuizes({ Quize }: { Quize: QuizeType }) {
           <span className="font-normal">{Quize.instructorName}</span>
         </p>
         <p>
-          <span className="font-semibold text-gray-700">Due :</span>{" "}
+          <span className="font-semibold text-gray-700">Conduct :</span>{" "}
           <span className="font-normal">{Quize.Conduct}</span>
         </p>
       </div>
