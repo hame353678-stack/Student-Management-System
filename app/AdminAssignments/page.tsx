@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
 import AddminShowAssignments from "@/Components/AdminShowAssignments";
