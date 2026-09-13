@@ -6,7 +6,7 @@ import clientPromise from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 export default async function Addcourse(formdata: FormData) {
-  const id = formdata.get("StudentId") as string;
+  const regId = formdata.get("StudentId") as string;
   const courseId = formdata.get("courseId") as string;
   const courseName = formdata.get("courseName") as string;
   const duration = formdata.get("duration") as string;
@@ -16,12 +16,13 @@ export default async function Addcourse(formdata: FormData) {
 
   const students = database.collection("Students");
 
+  // Find student using Registration ID
   const student = await students.findOne({
-    id: id,
+    regId: regId,
   });
 
   if (!student) {
-    console.log(`No student is found with ID: ${id}`);
+    console.log(`No student found with Registration ID: ${regId}`);
     return;
   }
 
@@ -36,7 +37,7 @@ export default async function Addcourse(formdata: FormData) {
 
   if (alreadyEnrolled) {
     console.log("Student is already enrolled in this course");
-    redirect("/courses");
+    redirect("/Courses");
   }
 
   const data: enrollementType = {
@@ -50,7 +51,8 @@ export default async function Addcourse(formdata: FormData) {
 
   const enrolled = await management.insertOne(data);
 
-  console.log(enrolled);
-  revalidatePath("/courses");
-  redirect("/courses");
+  console.log("Enrollment inserted:", enrolled);
+
+  revalidatePath("/Courses");
+  redirect("/Courses");
 }
