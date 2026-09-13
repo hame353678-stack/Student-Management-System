@@ -17,7 +17,7 @@ export default function ShowQuizes({ Quize }: { Quize: QuizeType }) {
           {Quize.instructorName}
         </p>
         <p>
-          <span className="font-medium text-slate-400">Due:</span>{" "}
+          <span className="font-medium text-slate-400">Conduct:</span>{" "}
           {Quize.Conduct}
         </p>
       </div>
