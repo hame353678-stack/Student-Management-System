@@ -7,7 +7,7 @@ export default function ShowStudents({
   student: enrollementType;
 }) {
   return (
-    <div className="w-full bg-white border border-gray-200 rounded-xl shadow-md p-4 sm:p-5 hover:shadow-lg">
+    <div className="w-full grid lg:grid-col-3 md:grid-cols-2 sm:grid-cols-1 bg-white border border-gray-200 rounded-xl shadow-md p-4 sm:p-5 hover:shadow-lg">
       <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
         Student Information
       </h2>
@@ -15,17 +15,17 @@ export default function ShowStudents({
       <div className="space-y-3 text-sm sm:text-base">
         <div>
           <p className="font-semibold text-gray-700">Student</p>
-          <p className="text-gray-600 break-words">{student.studentname}</p>
+          <p className="text-gray-600 break-word">{student.studentname}</p>
         </div>
 
         <div>
           <p className="font-semibold text-gray-700">RegID</p>
-          <p className="text-gray-600 break-words">{student.studentregId}</p>
+          <p className="text-gray-600 break-word">{student.studentregId}</p>
         </div>
 
         <div>
           <p className="font-semibold text-gray-700">Course Name</p>
-          <p className="text-gray-600 break-words">{student.courseName}</p>
+          <p className="text-gray-600 break-word">{student.courseName}</p>
         </div>
 
         <div>
