@@ -14,7 +14,7 @@ export default async function DeleteQuize(formdata: FormData) {
   const database = client.db("StudentManagement");
   const management = database.collection<QuizeType>("Quizes");
   const Quize = await management.findOne({
-    coursename: coursname,
+    coursname: coursname,
     QuizeTitle: QuizeTitle,
     InstructorName: InstructorName,
   });
