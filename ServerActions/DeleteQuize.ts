@@ -23,6 +23,6 @@ export default async function DeleteQuize(formdata: FormData) {
     revalidatePath("/AdminQuizes");
     redirect("/AdminQuizes");
   } else {
-    redirect("/Admin?secret=Pet123");
+    redirect("/Home");
   }
 }
