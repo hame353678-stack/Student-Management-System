@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { NextRequest, NextResponse } from "next/server";
 import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";

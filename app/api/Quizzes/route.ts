@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { QuizeType } from "@/DataTypes/QuizesType";
 import clientPromise from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
