@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 export default async function DeleteQuize(formdata: FormData) {
   const courseName = formdata.get("courseName") as string;
   const QuizeTitle = formdata.get("QuizeTitle") as string;
-  const InstructorName = formdata.get("InstructorName") as string;
+  const instructorName = formdata.get("InstructorName") as string;
 
   const client = await clientPromise;
   const database = client.db("StudentManagement");
@@ -16,13 +16,13 @@ export default async function DeleteQuize(formdata: FormData) {
   const Quize = await management.findOne({
     courseName: courseName,
     QuizeTitle: QuizeTitle,
-    InstructorName: InstructorName,
+    instructorName: instructorName,
   });
   if (Quize) {
     management.deleteOne(Quize);
     revalidatePath("/AdminQuizes");
     redirect("/AdminQuizes");
   } else {
-    redirect("/Home");
+    redirect("/Admin?secret=Pet123");
   }
 }
