@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
 import AddminShowAssignments from "@/Components/AdminShowAssignments";
 import Link from "next/link";
-export default async function Assignements() {
+export default function Assignements() {
   const [Assignments, setcourses] = useState<AssignmentTypes[]>([]);
 
   useEffect(() => {
