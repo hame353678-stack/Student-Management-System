@@ -1,20 +1,21 @@
 import { studentType } from "@/DataTypes/studentType";
 import ShowStudents from "@/Components/ShowStudent";
 import clientPromise from "@/lib/db";
+import { enrollementType } from "@/DataTypes/enrolementType";
 
 export default async function ({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ studentregId: string[] }>;
 }) {
-  const { id } = await params;
+  const { studentregId } = await params;
 
   const client = await clientPromise;
   const database = client.db("StudentManagement");
-  const management = database.collection<studentType>("Students");
+  const management = database.collection<enrollementType>("Enrolements");
 
-  const student: studentType | null = await management.findOne({
-    id: parseInt(id),
+  const student: enrollementType | null = await management.findOne({
+    studentregId: studentregId,
   });
 
   if (!student) {
@@ -27,7 +28,7 @@ export default async function ({
 
           <p className="text-gray-500">
             No student was found with ID:{" "}
-            <span className="font-semibold text-gray-700">{id}</span>
+            <span className="font-semibold text-gray-700">{studentregId}</span>
           </p>
         </div>
       </div>
