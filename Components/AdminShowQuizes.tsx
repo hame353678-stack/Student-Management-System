@@ -25,7 +25,7 @@ export default function AdminShowQuizes({ Quize }: { Quize: QuizeType }) {
       </div>
 
       <form action={DeleteQuize} className="mt-auto flex justify-between gap-2">
-        <input type="hidden" name="coursname" value={Quize.courseName} />
+        <input type="hidden" name="courseName" value={Quize.courseName} />
         <input type="hidden" name="QuizeTitle" value={Quize.QuizeTitle} />
         <input
           type="hidden"

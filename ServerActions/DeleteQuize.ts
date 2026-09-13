@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function DeleteQuize(formdata: FormData) {
-  const coursname = formdata.get("coursname") as string;
+  const courseName = formdata.get("courseName") as string;
   const QuizeTitle = formdata.get("QuizeTitle") as string;
   const InstructorName = formdata.get("InstructorName") as string;
 
@@ -14,7 +14,7 @@ export default async function DeleteQuize(formdata: FormData) {
   const database = client.db("StudentManagement");
   const management = database.collection<QuizeType>("Quizes");
   const Quize = await management.findOne({
-    coursname: coursname,
+    courseName: courseName,
     QuizeTitle: QuizeTitle,
     InstructorName: InstructorName,
   });
