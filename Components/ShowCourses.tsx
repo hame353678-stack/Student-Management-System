@@ -1,5 +1,5 @@
 import { courseType } from "@/DataTypes/courseType";
-import Link from "next/link";
+import Addcourse from "@/ServerActions/Addcourse";
 
 export default function ShowCourses({ course }: { course: courseType }) {
   return (
@@ -24,12 +24,18 @@ export default function ShowCourses({ course }: { course: courseType }) {
         Credits : <span className="font-normal">{course.credits}</span>
       </p>
 
-      <Link
-        href={`/AddCourse?courseId=${course.id}&courseName=${course.name}&duration=${course.duration}`}
-        className="mt-auto text-center bg-blue-500 text-white p-2 rounded-lg font-semibold hover:bg-blue-600"
-      >
-        Add Course
-      </Link>
+      <form action={Addcourse} className="mt-auto">
+        <input type="hidden" name="courseId" value={course.id} />
+        <input type="hidden" name="courseName" value={course.name} />
+        <input type="hidden" name="duration" value={course.duration} />
+
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white p-2 rounded-lg font-semibold hover:bg-blue-600"
+        >
+          Add Course
+        </button>
+      </form>
     </div>
   );
 }
