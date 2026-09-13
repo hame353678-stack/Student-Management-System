@@ -18,5 +18,6 @@ export default async function DeleteAssignment(formdata: FormData) {
   if (Assignment) {
     await management.deleteOne(Assignment);
     revalidatePath("/AdminAssignments");
+    redirect("/Admin?secret=Pet123");
   }
 }
