@@ -24,7 +24,7 @@ export default async function AddnewQuize(formdata: FormData) {
   if (Quize) {
     revalidatePath("/Quizes");
     revalidatePath("/AdminQuizes");
-    revalidatePath("/Admin");
-    redirect("/Admin");
+    revalidatePath("/Admin?secrete=Pet123");
+    redirect("/Admin?secrete=Pet123");
   }
 }
