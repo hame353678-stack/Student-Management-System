@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import ShowCourses from "@/Components/ShowCourses";
 import { courseType } from "@/DataTypes/courseType";
