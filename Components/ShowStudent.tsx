@@ -7,7 +7,7 @@ export default function ShowStudents({
   student: enrollementType;
 }) {
   return (
-    <div className="w-full grid lg:grid-col-3 md:grid-cols-2 sm:grid-cols-1 bg-white border border-gray-200 rounded-xl shadow-md p-4 sm:p-5 hover:shadow-lg">
+    <div className="w-full  bg-white border border-gray-200 rounded-xl shadow-md p-4 sm:p-5 hover:shadow-lg">
       <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
         Student Information
       </h2>

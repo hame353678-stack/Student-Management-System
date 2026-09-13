@@ -19,7 +19,7 @@ export default function Students() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 bg-fuchsia-300 sm:gap-1 md:gap-2 lg:gap-3 sm:p-2 md:p-3 lg:p-4">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 bg-fuchsia-300 sm:gap-1 md:gap-2 lg:gap-3 sm:p-2 md:p-3 lg:p-4">
       <h1 className="text-center col-span-3 text-2xl font-bold">
         Enrolled Students
       </h1>
