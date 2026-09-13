@@ -1,14 +1,20 @@
-import clientPromise from "@/lib/db";
+import { useEffect, useState } from "react";
 import { AssignmentTypes } from "@/DataTypes/AssignmentType";
 import AddminShowAssignments from "@/Components/AdminShowAssignments";
 import Link from "next/link";
 export default async function Assignements() {
-  const client = await clientPromise;
-  const database = client.db("StudentManagement");
-  const management = database.collection<AssignmentTypes>("Assignments");
-  const Assignments: AssignmentTypes[] | null = await management
-    .find({})
-    .toArray();
+  const [Assignments, setcourses] = useState<AssignmentTypes[]>([]);
+
+  useEffect(() => {
+    const fetchAssignments = async () => {
+      const data = await fetch("/api/Assignments");
+      const fetchedAssignments = await data.json();
+
+      setcourses(fetchedAssignments);
+    };
+
+    fetchAssignments();
+  }, []);
 
   return (
     <div className="p-4 max-w-7xl mx-auto">

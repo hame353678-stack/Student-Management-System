@@ -7,7 +7,7 @@ export default async function Quizes() {
 
   useEffect(() => {
     const fetchQuizzes = async () => {
-      const data = await fetch("/api/courses");
+      const data = await fetch("/api/Quizzes");
       const fetchedQuizzes = await data.json();
 
       setQuizzes(fetchedQuizzes);
