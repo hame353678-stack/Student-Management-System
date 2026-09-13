@@ -5,7 +5,7 @@ export default function AddnewQuize() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
       <div className="w-full max-w-lg bg-white border border-gray-300 rounded-xl p-6">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
-          Add New Course
+          Add New Quizz
         </h2>
 
         <form action={AddNewQuize} className="flex flex-col gap-4">
@@ -41,7 +41,7 @@ export default function AddnewQuize() {
             type="submit"
             className="w-full bg-blue-600 text-white rounded-lg p-3 font-semibold hover:bg-blue-700"
           >
-            Add Course
+            Add Quizz
           </button>
         </form>
       </div>
