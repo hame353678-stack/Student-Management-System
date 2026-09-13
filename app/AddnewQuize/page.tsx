@@ -18,7 +18,7 @@ export default function AddnewQuize() {
 
           <input
             type="text"
-            name="CourseName"
+            name="courseName"
             placeholder="Enter Course Name"
             className="border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500"
           />
