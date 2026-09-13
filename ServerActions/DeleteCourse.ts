@@ -3,6 +3,7 @@
 import { courseType } from "@/DataTypes/courseType";
 import clientPromise from "@/lib/db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default async function DELETE(formdata: FormData) {
   const id = formdata.get("id") as string;
@@ -14,5 +15,6 @@ export default async function DELETE(formdata: FormData) {
     const deleted = management.deleteOne(course);
     console.log(deleted);
     revalidatePath("/AdminCourses");
+    redirect("/AdminCourses");
   }
 }
