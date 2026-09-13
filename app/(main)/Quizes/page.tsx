@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { QuizeType } from "@/DataTypes/QuizesType";
 import ShowQuizes from "@/Components/ShowQuizes";
 
-export default async function Quizes() {
+export default function Quizes() {
   const [Quizzes, setQuizzes] = useState<QuizeType[]>([]);
 
   useEffect(() => {

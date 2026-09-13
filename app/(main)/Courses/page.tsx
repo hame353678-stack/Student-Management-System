@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ShowCourses from "@/Components/ShowCourses";
 import { courseType } from "@/DataTypes/courseType";
 
-export default async function Courses() {
+export default function Courses() {
   const [courses, setcourses] = useState<courseType[]>([]);
 
   useEffect(() => {
