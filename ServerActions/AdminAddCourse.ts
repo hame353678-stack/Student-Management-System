@@ -29,6 +29,7 @@ export default async function AdminAddCourse(formdata: FormData) {
   if (course) {
     console.log(course);
     revalidatePath("/AdminCourses");
+    redirect("/AdminCourses");
   } else {
     redirect("/Home");
   }
