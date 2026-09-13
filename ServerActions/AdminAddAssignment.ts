@@ -25,6 +25,7 @@ export default async function AdminAddAssignment(formdata: FormData) {
     const Assignment = await Assignments.insertOne(data);
     console.log(Assignment);
     revalidatePath("/AdminAssignments");
-    redirect("/Assignments");
+    revalidatePath("/Assignments");
+    redirect("/AdminAssignments");
   }
 }
