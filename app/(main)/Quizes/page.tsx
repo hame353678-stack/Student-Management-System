@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { QuizeType } from "@/DataTypes/QuizesType";
 import ShowQuizes from "@/Components/ShowQuizes";
