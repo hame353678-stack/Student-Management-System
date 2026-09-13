@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { QuizeType } from "@/DataTypes/QuizesType";
 import AdminShowQuizes from "@/Components/AdminShowQuizes";
 import Link from "next/link";
-export default async function AdminQuizes() {
+export default function AdminQuizes() {
   const [Quizzes, setQuizzes] = useState<QuizeType[]>([]);
 
   useEffect(() => {
