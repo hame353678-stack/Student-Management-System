@@ -1,12 +1,15 @@
 import ShowStudents from "@/Components/ShowStudent";
 import clientPromise from "@/lib/db";
 import { studentType } from "@/DataTypes/studentType";
+import { enrollementType } from "@/DataTypes/enrolementType";
 export default async function Students() {
   try {
     const client = await clientPromise;
     const database = client.db("StudentManagement");
-    const management = database.collection<studentType>("Enrolements");
-    const students: studentType[] | null = await management.find({}).toArray();
+    const management = database.collection<enrollementType>("Enrolements");
+    const students: enrollementType[] | null = await management
+      .find({})
+      .toArray();
 
     return (
       <div className="grid grid-cols-3 bg-fuchsia-300 sm:gap-1 md:pag-2 lg:gap-3 sm:2 md:3 lg:p-4 ">
