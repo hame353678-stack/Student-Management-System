@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export default async function DeleteQuize(formdata: FormData) {
-  const coursname = formdata.get("coursename") as string;
+  const coursname = formdata.get("coursname") as string;
   const QuizeTitle = formdata.get("QuizeTitle") as string;
   const InstructorName = formdata.get("InstructorName") as string;
 
