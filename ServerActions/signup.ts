@@ -4,6 +4,7 @@ import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 export default async function signup(formdata: FormData) {
   const id = formdata.get("id") as string;
@@ -26,8 +27,20 @@ export default async function signup(formdata: FormData) {
     CGPA: Number(CGPA),
     Location: Location,
   };
+
   const result = await management.insertOne(student);
+
+  const cookieStore = await cookies();
+  cookieStore.set({
+    name: "session",
+    value: JSON.stringify({ id: regId, username: username }),
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    maxAge: 60 * 60 * 24 * 7, // 1 week
+  });
+
   console.log(result);
-  revalidatePath(`/Home`);
-  redirect(`/Home`);
+  revalidatePath("/Home");
+  redirect("/Home");
 }

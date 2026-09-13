@@ -4,6 +4,7 @@ import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 export default async function LogOut(formdata: FormData) {
   const regId = formdata.get("regId") as string;
@@ -14,8 +15,17 @@ export default async function LogOut(formdata: FormData) {
     regId: regId,
   });
   if (student) {
-    const deleted = await management.deleteOne(student);
-    console.log(deleted);
+    const cookieStore = await cookies();
+
+    cookieStore.set({
+      name: "session",
+      value: "",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 0, // Expire immediately
+    });
+
     revalidatePath("/");
     redirect("/");
   }
