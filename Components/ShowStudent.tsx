@@ -40,9 +40,9 @@ export default function ShowStudents({
       </div>
 
       <form action={DeleteStudent} className="mt-5">
-        <input type="hidden" name="regId" value={student.studentregId} />
+        <input type="hidden" name="studentregId" value={student.studentregId} />
 
-        <input type="hidden" name="name" value={student.studentname} />
+        <input type="hidden" name="studentname" value={student.studentname} />
 
         <button
           type="submit"
