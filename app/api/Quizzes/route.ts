@@ -4,19 +4,20 @@ import clientPromise from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 //Get handler to get all the enrolledstudents on localhost:3000\\api\enrolledstudent
-export async function GET(
-  req: NextRequest,
-  {
-    searchParams,
-  }: {
-    searchParams: Promise<{ secret: string }>;
-  },
-) {
-  const { secret } = await searchParams;
+export async function GET(req: NextRequest) {
+  // Get secret from URL
+  const secret = req.nextUrl.searchParams.get("secret");
+
+  // Check secret
   if (secret !== "Pet123") {
     return NextResponse.json(
-      { success: false, message: "We ran into an error" },
-      { status: 500 },
+      {
+        success: false,
+        message: "We ran into an error",
+      },
+      {
+        status: 500,
+      },
     );
   }
 
