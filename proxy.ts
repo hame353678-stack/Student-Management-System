@@ -9,10 +9,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL("/Account/Login", request.url));
   }
 
-  if (
-    session &&
-    (pathname.startsWith("/Account") || pathname.startsWith("/"))
-  ) {
+  if (session && pathname.startsWith("/Account")) {
     return NextResponse.redirect(new URL("/Home", request.url));
   }
 
