@@ -7,8 +7,22 @@ import clientPromise from "@/lib/db";
 //GET handler to search student in a database on the basis of id :
 export async function GET(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
+  {
+    searchParams,
+    params,
+  }: {
+    searchParams: Promise<{ secret: string }>;
+    params: Promise<{ id: string }>;
+  },
 ) {
+  const { secret } = await searchParams;
+  if (secret !== "Pet123") {
+    return NextResponse.json(
+      { success: false, message: "We ran into an error" },
+      { status: 500 },
+    );
+  }
+
   const client = await clientPromise;
   const { id } = await params;
   const database = client.db("StudentManagement");
