@@ -4,6 +4,7 @@ import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import { revalidatePath } from "next/cache";
 
 export default async function Login(formdata: FormData) {
   const username = formdata.get("username") as string;
@@ -29,6 +30,7 @@ export default async function Login(formdata: FormData) {
       path: "/",
       maxAge: 60 * 60 * 24 * 7, // 1 week
     });
+    revalidatePath("/Home");
     redirect("/Home");
   }
 }
