@@ -41,6 +41,5 @@ export default async function signup(formdata: FormData) {
   });
 
   console.log(result);
-  revalidatePath("/Home");
   redirect("/Home");
 }
