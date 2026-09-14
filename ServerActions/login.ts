@@ -2,7 +2,6 @@
 
 import { studentType } from "@/DataTypes/studentType";
 import clientPromise from "@/lib/db";
-import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
@@ -30,7 +29,6 @@ export default async function Login(formdata: FormData) {
       path: "/",
       maxAge: 60 * 60 * 24 * 7, // 1 week
     });
-    revalidatePath("/Home");
     redirect("/Home");
   }
 }
