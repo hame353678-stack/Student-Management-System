@@ -8,21 +8,11 @@ import clientPromise from "@/lib/db";
 export async function GET(
   req: NextRequest,
   {
-    searchParams,
     params,
   }: {
-    searchParams: Promise<{ secret: string }>;
     params: Promise<{ id: string }>;
   },
 ) {
-  const { secret } = await searchParams;
-  if (secret !== "Pet123") {
-    return NextResponse.json(
-      { success: false, message: "We ran into an error" },
-      { status: 500 },
-    );
-  }
-
   const client = await clientPromise;
   const { id } = await params;
   const database = client.db("StudentManagement");
